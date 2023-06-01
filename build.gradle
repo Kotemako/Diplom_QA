@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '8.0.1'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+allure {
+    version = '2.21.0'
+
+    useJUnit5 { version = '2.21.0' }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'com.codeborne:selenide:6.15.0'
+    testImplementation 'io.qameta.allure:allure-selenide:2.21.0'
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
+    testImplementation 'org.slf4j:slf4j-simple:2.0.7'
+    testImplementation 'mysql:mysql-connector-java:8.0.33'
+    testImplementation 'org.postgresql:postgresql:42.6.0'
+    testImplementation 'io.rest-assured:rest-assured:5.3.0'
+    testImplementation 'commons-dbutils:commons-dbutils:1.7'
+    testImplementation 'com.google.code.gson:gson:2.10.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty 'selenide.headless', System.getProperty('headless')
+    systemProperty 'db.url', System.getProperty('db.url')
+}
