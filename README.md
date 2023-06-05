@@ -25,7 +25,7 @@ java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/db_mysql" -jar artifac
 
 java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/db_postgresql" -jar artifacts/aqa-shop.jar
 
-6. В консоли (двойное нажатие Ctrl) выполнить одну из команд в зависимости от выбранной БД в п. 2.
+6. В консоли (двойное нажатие Ctrl) выполнить одну из команд в зависимости от выбранной БД
 
 *С подключением к MySQL:*
 
