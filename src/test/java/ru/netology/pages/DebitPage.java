@@ -77,6 +77,7 @@ public class DebitPage {
         ownerError.shouldBe(Condition.hidden);
         cvcError.shouldBe(Condition.hidden);
     }
+
     public void cardNumberErrorFormat() {
         cardNumberError
                 .shouldHave(Condition.text("Неверный формат"))
@@ -176,6 +177,7 @@ public class DebitPage {
                 .shouldHave(Condition.text("Неверный формат"))
                 .shouldBe(Condition.visible);
     }
+
     public void cvcErrorFilling() {
         cardNumberError.shouldBe(Condition.hidden);
         monthError.shouldBe(Condition.hidden);
