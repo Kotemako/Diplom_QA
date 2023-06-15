@@ -9,7 +9,9 @@ import ru.netology.pages.CreditPage;
 import ru.netology.pages.StartPage;
 
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.data.DataGenerator.*;
+import static ru.netology.data.DbHelper.*;
 
 public class TicketCreditTest {
 
@@ -42,6 +44,11 @@ public class TicketCreditTest {
             creditPage.sendDataInForm(cardData.getNumber(), cardData.getMonth(), cardData.getYear(),
                     cardData.getOwner(), cardData.getCvc());
             creditPage.approved();
+            var expected = "APPROVED";
+            var creditInfo = getCreditRequestInfo();
+            var orderInfo = getOrderInfo();
+            assertEquals(expected, creditInfo.getStatus());
+            assertEquals(creditInfo.getId(), orderInfo.getCredit_id());
         }
     }
 
@@ -58,6 +65,11 @@ public class TicketCreditTest {
             creditPage.sendDataInForm(cardData.getNumber(), cardData.getMonth(), cardData.getYear(),
                     cardData.getOwner(), cardData.getCvc());
             creditPage.declined();
+            var expected = "DECLINED";
+            var paymentInfo = getCreditRequestInfo();
+            var orderInfo = getOrderInfo();
+            assertEquals(expected, paymentInfo.getStatus());
+            assertEquals(paymentInfo.getBank_id(), orderInfo.getPayment_id());
         }
 
         @Test
