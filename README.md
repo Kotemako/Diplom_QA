@@ -44,3 +44,9 @@ java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/db_postgresql" -j
 
 9. Для остановки работы выполнить команду:
    docker-compose down
+
+### Документация проекта:
+[1.Задание к диплому](https://github.com/Kotemako/Diplom_QA/docs/Task.md)  
+[2.План автоматизации](https://github.com/Kotemako/Diplom_QA/docs/Plan.md)  
+[3.Отчет по итогам тестирования](https://github.com/Kotemako/Diplom_QA/docs/Report.md)
+[4.Отчет по итогам автоматизации](https://github.com/Kotemako/Diplom_QA/docs/Summary.md)

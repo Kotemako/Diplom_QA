@@ -20,11 +20,11 @@ public class DataGenerator {
 
     @Value
     public static class CardData {
-        private final String number;
-        private final String month;
-        private final String year;
-        private final String owner;
-        private final String cvc;
+        String number;
+        String month;
+        String year;
+        String owner;
+        String cvc;
     }
 
     public static CardData getValidApprovedCard() {
@@ -41,10 +41,6 @@ public class DataGenerator {
 
     public static String getCardNumberWith16Zero() {
         return faker.numerify("0000 0000 0000 0000");
-    }
-
-    public static String getInvalidCardNumber() {
-        return faker.numerify("#### #### #### ####");
     }
 
     public static String getEmptyCardNumber() {

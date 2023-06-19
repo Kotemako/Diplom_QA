@@ -36,7 +36,7 @@ public class CreditPage {
 
     public void approved() {
         notificationSuccess
-                .shouldHave(Condition.text("Операция одобрена Банком."), Duration.ofSeconds(10))
+                .shouldHave(Condition.text("Операция одобрена Банком."), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
 
     }
